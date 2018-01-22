@@ -1,4 +1,25 @@
 {
+  "name": "char-sortinator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "start": "node server",
+    "devserver": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-kang/char-sortinator/issues"
+  },
+  "homepage": "https://github.com/d-kang/char-sortinator#readme",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-kang/char-sortinator.git"
+  },
+  "devDependencies": {},
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
