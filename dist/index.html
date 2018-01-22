@@ -21,10 +21,9 @@
 
     const $form = $('form').on('submit', (e) => {
       e.preventDefault();
-      const { value } = e.target[0];
-      console.log('value', value);
+      const { value: payload } = e.target[0];
 
-      $.post('/api/sort', {params: {hi: 'ho'}})
+      $.post('/api/sort', { payload })
         .then(res => console.log('res>>>', res))
         .catch(err => console.error('err>>>', err));
     });
