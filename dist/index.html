@@ -5,6 +5,28 @@
     <title>Char-Sortinator</title>
   </head>
   <body>
-    hi
+    <form class="" action="index.html" method="post">
+      <input type="text" name="" value="">
+      <button type="button" name="button">Submit</button>
+    </form>
   </body>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+
+    const $form = $('form').on('submit', (e) => {
+      e.preventDefault();
+      const { value } = e.target[0];
+      console.log('value', value);
+
+      $.post('/api/sort', {params: {hi: 'ho'}})
+        .then(res => console.log('res>>>', res))
+        .catch(err => console.error('err>>>', err));
+    });
+  </script>
 </html>

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 const data = [];
 
-// app.get('/', (req, res) => res.send('hello wor;d'));
+app.post('/api/sort', (req, res) => res.send('hello world'));
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
