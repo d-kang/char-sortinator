@@ -12,15 +12,16 @@ app.use(bodyParser.json());
 
 const data = [];
 
+app.get('/api/sort', (req, res) => {
+  res.send(data);
+})
+
 app.post('/api/sort', (req, res) => {
   const { payload } = req.body;
-
   const sortinated = payload.split('').sort().join('');
-  console.log('sortinated', sortinated);
-  console.log('data', data);
-  data.push([payload, sortinated])
-  console.log('data', data);
-  res.send(data);
+  const pushed = [payload, sortinated];
+  data.push(pushed);
+  res.send(pushed);
 });
 
 app.use(express.static(path.join(__dirname, '../dist')));

@@ -7,8 +7,24 @@
   <body>
     <form class="" action="index.html" method="post">
       <input type="text" name="" value="">
-      <button type="button" name="button">Submit</button>
+      <button type="submit" name="button">Submit</button>
     </form>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Input</td>
+          <td>Output</td>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr >
+          <td>1</td>
+          <td>23</td>
+        </tr>
+      </tbody>
+    </table>
+
   </body>
 
   <script
@@ -18,13 +34,37 @@
 
 
   <script type="text/javascript">
+    $.get('/api/sort')
+      .then(res => (console.log('get res>>>', res), res))
+      .then(res => {
 
-    const $form = $('form').on('submit', (e) => {
+        res.forEach(([cell1, cell2]) => {
+          $('tbody').append(`
+            <tr>
+              <td>${cell1}</td>
+              <td>${cell2}</td>
+            </tr>
+            `)
+        });
+      })
+      .catch(err => console.error('err>>>', err));
+
+
+    const $form = $('form').submit((e) => {
       e.preventDefault();
       const { value: payload } = e.target[0];
-
+      e.target[0].value = '';
       $.post('/api/sort', { payload })
-        .then(res => console.log('res>>>', res))
+        .then(res => (console.log('res>>>', res), res))
+        .then(res => {
+
+          $('tbody').append(`
+            <tr>
+              <td>${res[0]}</td>
+              <td>${res[1]}</td>
+            </tr>
+            `)
+        })
         .catch(err => console.error('err>>>', err));
     });
   </script>
