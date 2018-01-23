@@ -1,13 +1,13 @@
 {
   "name": "char-sortinator",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "",
   "keywords": [],
   "author": "",
   "scripts": {
     "start": "node server",
     "devserver": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "license": "ISC",
   "bugs": {
@@ -19,7 +19,9 @@
     "type": "git",
     "url": "git+https://github.com/d-kang/char-sortinator.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^22.1.4"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",

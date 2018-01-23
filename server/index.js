@@ -24,6 +24,6 @@ app.post('/api/sort', (req, res) => {
   res.send(pushed);
 });
 
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../src')));
 
 app.listen(3001, () => console.log('app is listening on port http://localhost:3000'));

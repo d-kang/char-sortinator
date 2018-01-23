@@ -18,7 +18,10 @@ form {
 }
 
 table {
-  background-color: #7FDBFF
+  background-color: #7FDBFF;
+  width: 100%;
+  max-width: 1000px;
+
 }
 
 thead {
