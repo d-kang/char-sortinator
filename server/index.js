@@ -13,12 +13,10 @@ app.use(bodyParser.json());
 const data = [];
 
 app.get('/api/sort', (req, res) => {
-  console.log('req', req.body, req.params, req.query);
   res.send(data);
 });
 
 app.post('/api/sort', (req, res) => {
-  console.log('req', req.body, req.params, req.query);
   const { payload } = req.body;
   const sortinated = payload.split('').sort().join('');
   const pushed = [payload, sortinated];
